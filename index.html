@@ -4,131 +4,170 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css1.css">
     <link rel="stylesheet" href="https://www.flaticon.com/free-icons/microsoft">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css1.css">
     <title> Microsoft</title>
 </head>
 <body>
-    <div class="topnav">
-        <img src="Microsoft1.jpg" alt=""class="img">
-        <a href="index.html"> Halaman Utama</a>
-        <a href="biodata.html">Biodata</a>
-        <a href="contact_us.html">Contact Us</a>
-        <a href="galery.html">Galery</a>
-        <a href="pertambahan.html">tambahan</a>
-        <a href="https://fti.unai.edu"> FTI Unai</a>
-        <a href="https://unai.edu">Website Unai</a>
-    <div class="l">
-        <li><i class="material-icons">search</i></li>
-        <li><i class="material-icons">shop</i></li>
-        <li><i class="material-icons">list</i></li>
-    </ul>
-    </div></div>
+   <nav class="navbar navbar expand-sm bg-light">
+       <div class="container">
+           <ul class="navbar nav">
+               <li><img class="gambar1" src="/galeri/Microsoft1.jpg" alt=""></li>
+               <li class="nav-item"><a href="index.html">Menu Utama</a></li>
+               <li class="nav-item"><a href="biodata.html">Biodata</a></li>
+               <li class="nav-item"><a href="contact_us.html">Contact us </a></li>
+               <li class="nav-item"><a href="galery.html">Galeri</a></li>
+               <li class="nav-item"><a href="pertambahan.html">Tambahan</a></li>
+               <li class="nav-item"><a href="https://fti.unai.edu" target="_blank"> FTI Unai</a></li>
+               <li class="nav-item"><a href="https://unai.edu" target="_blank">Website Unai</a></li>
+           </ul>
 
-    <img src="layarutama.png" alt="" class="utama">
-    
-    <div class="icon">
-    <ul>
-        <li><img src="windows.png" alt="" class="icon"></li>
-        <li><img src="game.webp" alt="" class="icon"></li>
-        <li><img src="windows11.webp" alt="" class="icon"></li>
-    </ul>   
-    </div>
-    
-    <div class="galeri">
-        <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="edge.webp" alt=""></a>
-        <div class="ket"><h3>Microsoft Edge</h3>Performa kelas dunia dengan lebih banyak privasi, produktivitas, dan nilai saat Anda menjelajah.</div>
-    </div>
-    <div class="galeri">
-        <a href="https://www.microsoft.com/id-id/microsoft-365/onedrive/online-cloud-storage?icid=mscom_marcom_CPH2a_OneDrive"><img src="onedrive.webp" alt=""></a>
-        <div class="ket"><h3>Microsoft One Drive</h3>Simpan file serta foto ke OneDrive dan akses dari perangkat apa saja, di mana saja.</div>
-    </div>
-    <div class="galeri">
-        <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="bing.webp" alt=""></a>
-        <div class="ket"><h3>Bing</h3>Cari video, peta, gambar, berita, dan banyak lagi.</div>
-    </div>
-    <div class="galeri">
-        <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="onenote.webp" alt=""></a>
-        <div class="ket"><h3>one note</h3>Kelola catatan dan hidup Anda</div>
-    </div>
+       </div>
+   </nav>
 
-    <img src="outlok.png" alt="" class="utama">
-    <h2>Untuk bisnis</h2>
+    <div id="demo" class="container carousel slide" data-bs-ride="carousel">
 
-    <div class="galeri">
-        <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="365.webp" alt=""></a>
-        <div class="ket"><h3>Microsoft 365 untuk bisnis</h3>Tetap unggul dengan aplikasi yang andal untuk produktivitas, koneksi, dan keamanan.</div>
-    </div>
-    <div class="galeri">
-        <a href="https://www.microsoft.com/id-id/microsoft-365/onedrive/online-cloud-storage?icid=mscom_marcom_CPH2a_OneDrive"><img src="kubernetes.webp" alt=""></a>
-        <div class="ket"><h3>Jelajahi Kubernetes</h3>Pelajari cara kerja Kubernetes dan mulai dengan pengembangan aplikasi asli cloud sekarang.</div>
-    </div>
-    <div class="galeri">
-        <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="viva.webp" alt=""></a>
-        <div class="ket"><h3>Memperkenalkan Microsoft Viva</h3>Temukan platform pengalaman karyawan baru yang dirancang untuk membantu orang-orang terhubung, fokus, belajar, dan berkembang di tempat kerja.</div>
-    </div>
-    <div class="galeri">
-        <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="studio.webp" alt=""></a>
-        <div class="ket"><h3>Dapatkan Visual Studio 2019</h3>Unduh Visual Studio 2019, IDE yang produktif, modern, dan inovatif.</div>
-    </div> 
+        <!--indicator-->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        </div>
+        <!--ini buat slideshownya-->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/galeri/beranda1.webp" class="d-block w-100">
+                <div class="carousel-caption text-dark" style="text-align: left;" >
+                    <h3>Microsoft 365</h3>
+                    <p>Wujudkan inspirasi dengan aplikasi terbaik seperti Word, Excel,dan PowerPoint</p>
+                    <a class="afamily" href="https://www.microsoft.com/id-id/microsoft-365/p/microsoft-365-family/cfq7ttc0k5dm?icid=mscom_marcom_H2a_M365Family_Store_Holiday22&activetab=pivot%3aoverviewtab">Beli Microsoft 365 Family ></a><br>
+                    <a href="https://www.microsoft.com/id-id/microsoft-365/p/microsoft-365-personal/cfq7ttc0k5bf?icid=mscom_marcom_H2b_M365Personal_Store_Holiday22&activetab=pivot%3aoverviewtab">Beli Microsoft 365 Personal ></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/galeri/beranda2.webp" class="d-block w-100">  
+                <div class="carousel-caption text-light" style="text-align: left;">
+                    <h3>Di rancang untuk masa kini dan masa Mendatang</h3>
+                    <p>Generasi Terbaru dari game. Tujuanmu. teman dan keluarga. Windows 11 diciptakan agar anda lebih dekat dengan semua orang yang anda sayangi.</p>
+                    <a class="family2" href="https://www.microsoft.com/en-gb/windows/windows-11?icid=mscom_marcom_H1a_Win11PChlth#pchealthcheck">Periksa Apakah Pc anda siap ></a>
+                </div>
+            </div>
+        </div>
+         <!--ini untuk menggerakkannya-->
+         
+         <button type="button" class="carousel-control-prev"  data-bs-target="#demo" data-bs-slide="prev"></button>
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button type="button" class="carousel-control-next" data-bs-target="#demo"data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+        </div>
+        
+       
     
-   <p><a href="https://www.microsoft.com/id-id"></a>akun microsoft</p>
-    <div class="footer">
-        <table>
-            <tr>
-                <th><h4>yang baru</h4></th>
-                <th><h4>Microsoft Store</h4></th>
-                <th><h4>Pendidikan</h4></th>
-                <th><h4>Enterprise</h4></th>
-                <th><h4>pengembang</h4></th>
-                <th><h4>Perusahaan</h4></th>
-            </tr>
-            <tr>
-                <td>Microsoft 365</td>
-                <td>Profil akun</td>
-                <td>Microsoft dalam pendidikan</td>
-                <td>Microsoft Azure</td>
-                <td>Microsoft Visual Studio</td>
-                <td>karier</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>pusat unduh</td>
-                <td>Office Untuk Pelajar</td>
-                <td>Microsoft Indurtry</td>
-                <td>Pusat Pengembang</td>
-                <td>Tentang Microsoft</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>pengembalian</td>
-                <td>office 365 untuk sekolah</td>
-                <td>layanan keuangan</td>
-                <td>Chanel 9</td>
-                <td>Berita Perusahaan</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>pelacakan pesanan</td>
-                <td></td>
-                <td></td>
-                <td>Microsoft 365 Dev Center</td>
-                <td>Privasi di Miceosoft</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Program Pengembangan Microsoft 365</td>
-                <td>Investor</td>
-            </tr>
-        </table>
-        <a href="biodata.html">Biodata</a>
-        <a href="contact_us.html">Contact Us</a>
-        <a href="galery.html">Galery</a>
-        <a href="pertambahan.html">tambahan</a>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-3 text-dark" class="galeri12">
+                <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="/galeri/edge.webp" alt=""></a><br><br><br>
+                <h4>Microsoft Edge</h4><p>Performa kelas dunia dengan lebih banyak privasi, produktivitas, dan nilai saat Anda menjelajah</p>
+                <a class="edge" href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3">Unduh Sekarang ></a>
+            </div>
+            <div class="col-sm-3 text-dark">
+                <a href="https://www.microsoft.com/id-id/microsoft-365/onedrive/online-cloud-storage?icid=mscom_marcom_CPH2a_OneDrive"><img src="/galeri/onedrive.webp" alt=""></a><br><br><br>
+                <h4>Microsoft One Drive</h4><p>Simpan file serta foto ke OneDrive dan akses dari perangkat apa saja, di mana saja</p>
+                <a class="edge" href="https://www.microsoft.com/id-id/microsoft-365/onedrive/online-cloud-storage?icid=mscom_marcom_CPH2a_OneDrive">Pelajari Selengkapnya ></a>
+            </div>
+            <div class="col-sm-3 text-dark">
+                <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="/galeri/bing.webp" alt=""></a><br><br><br>
+                <h4>Bing</h4><p>Cari video, peta, gambar, berita, dan banyak lagi</p>
+                <a class="edge" href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3">Cari Sekarang ></a>
+            </div>
+            <div class="col-sm-3 text-dark">
+                <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="/galeri/onenote.webp" alt=""></a><br><br><br>
+                <h4>OneNote</h4><p>Kelola catatan dan hidup Anda.</p>
+                <a class="edge" href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3">Pelajari Selengkapnya ></a>
+            </div>
+        </div>
     </div>
+    <br><br>
+    <div class="container">
+        <img src="outlok.png" alt="" class="utama">
+        
+    </div>
+    <br><br>
+    <div class="container mt-4">
+        <div class="row">
+            <h3>Untuk Bisnis</h3><br><br>
+            <div class="col-sm-3" class="galeri12">
+                <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="/galeri/365.webp" alt=""></a><br><br><br>
+                <h4>Microsoft 365 Untuk bisnis</h4>
+                <p>Tetap unggul dengan aplikasi yang andal untuk produktivitas, koneksi, dan keamanan</p>
+                <a class="edge" href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3">Beli Sekarang ></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="https://www.microsoft.com/id-id/microsoft-365/onedrive/online-cloud-storage?icid=mscom_marcom_CPH2a_OneDrive"><img src="/galeri/kubernetes.webp"></a><br><br><br>
+                <h4>Jelajahi Kubernetes</h4>
+                <p>Pelajari cara kerja Kubernetes dan mulai dengan pengembangan aplikasi asli cloud sekarang.</p>
+                <a class="edge" href="https://www.microsoft.com/id-id/microsoft-365/onedrive/online-cloud-storage?icid=mscom_marcom_CPH2a_OneDrive">Memulai ></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="/galeri/viva.webp" alt=""></a><br><br><br>
+                <h4>Memeperkenalkan Microsoft Viva</h4>
+                <p>Temukan platform pengalaman karyawan baru yang dirancang untuk membantu orang-orang terhubung, fokus, belajar, dan berkembang di tempat kerja</p>
+                <a class="edge" href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3">Pelajari Selengkapnya ></a>
+            </div>
+            <div class="col-sm-3">
+                <a href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3"><img src="/galeri/studio.webp" alt=""></a><br><br><br>
+                <h4>Dapatkan Visual Studio 2019</h4>
+                <p>Unduh Visual Studio 2019, IDE yang produktif, modern, dan inovatif</p>
+                <a class="edge" href="https://www.microsoft.com/id-id/edge?form=MI13F3&OCID=MI13F3">Dapatkan Sekarang ></a>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid mt-5 text-dark">
+        <div class="row">
+            <div class="col-sm-2">
+                <h5>Yang baru</h5>
+                <p>Microsoft 365</p>
+            </div>
+            <div class="col-sm-2">
+                <h5>Microsoft Store</h5>
+                <p>Profil akun</p>
+                <p>pusat unduh</p>
+                <p>Pengembalian</p>
+                <p>Pelacakan pesanan</p>
+            </div>
+            <div class="col-sm-2">
+                <h5>pesanan</h5>
+                <p>Microsoft dalam pendidikan</p>
+                <p>Office untuk pelajar</p>
+                <p>Office 365 untuk sekolah</p>
+            </div>
+            <div class="col-sm-2">
+                <h5>Enterprise</h5>
+                <p>Microsoft Azure</p>
+                <p>Microsoft Industry</p>
+                <p>Layanan Keuangan</p>
+            </div>
+            <div class="col-sm-2">
+                <h5>Pengembang</h5>
+                <p>Microsoft Visual Studio</p>
+                <p>Pusat Pengembang</p>
+                <p>Chanel 9</p>
+                <p>Microsoft 365 Dev Center</p>
+                <p>Programing pengembang Microsoft 365</p>
+            </div>
+            <div class="col-sm-2">
+                <h5>Perusahaan</h5>
+                <p>Karier</p>
+                <p>Tentang Microsoft</p>
+                <p>Berita Perusahaan</p>
+                <p>Privasi di Microsoft</p>
+                <p>Investor</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>                                                                                                                                                     
