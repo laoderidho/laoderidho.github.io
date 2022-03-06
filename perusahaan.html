@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar VueJS API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-success navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Laode_Ridho</a>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="karyawan.html">Karyawan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div id="app">
+
+        <div class="container">
+            <div class="py-5 text-center">
+              <h2>Ini Adalah Admin Perusahaan</h2>
+              <p class="lead">Ingin Mendaftar</p>
+            </div>
+      
+              <div class="col-md-12">
+                <h4 class="mb-3">User Data  <button class="btn btn-md btn-primary" v-on:click="resetForm()">Create new User </button>
+                </h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>Ket</th>
+                        <th>syarat</th>
+                        <th>alamat perusahaan</th>
+                        <th>deskripsi</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr v-for="user in company">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.ket }}</td>
+                        <td>{{ user.syarat }}</td>
+                        <td>{{ user.addres }}</td>
+                        <td>{{ user.description }}</td>
+                        <td><button class="btn btn-md btn-warning" v-on:click="getEdit(user)">Edit</button></td>
+                        <td><button class="btn btn-danger" v-on:click="getDelete(user)">Delete</button></td>
+                    </li>
+                </table>
+
+                <div v-if="message" class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>  
+                
+            
+                <h4 class="mb-3">User Information</h4>
+                <form class="needs-validation" novalidate>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="name">Nama Perusahaan</label>
+                      <input  v-model="name" type="text" class="form-control" id="name" placeholder="" value="" required>
+                      <div class="invalid-feedback">
+                        Valid first name is required.
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="ket">Keterangan</label>
+                      <input v-model="ket" type="text" class="form-control" id="ket" placeholder="" value="" required>
+                      <div class="invalid-feedback">
+                        Valid last name is required.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="syarat">Syarat</label>
+                   <textarea v-model="syarat" class="form-control" name="" id="syarat" cols="3" rows="5" placeholder="tuliskan syarat masuk perusahaan anda perusahaan anda"></textarea>
+                    <div class="invalid-feedback">
+                      please enter a valid number phone.
+                    </div>
+                  </div>
+                    <div class="mb-3">
+                      <label for="addres">Alamat</label>
+                      <input v-model="addres" type="text" class="form-control" id="addres" placeholder="" value="" required>
+                      <div class="invalid-feedback">
+                        Valid last name is required.
+                      </div>
+                    </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="description">deskripsi</label>
+                    <textarea  v-model="description" type="password" class="form-control" id="description" cols="3" rows="5"></textarea>
+                    <div class="invalid-feedback">
+                      please enter a valid password.
+                    </div>
+                  </div>
+                  </div>
+                
+                  <hr class="mb-4">
+                  <button v-if="!editMode && !deleteMode" v-on:click="createUser" class="btn btn-primary btn-lg btn-block" type="submit">Submit Data</button>
+                  <button v-if="editMode" v-on:click="updateUser" class="btn btn-warning btn-lg btn-block" type="submit">Update Data</button>
+                  <button v-if="deleteMode" v-on:click="deleteUser" class="btn btn-danger btn-lg btn-block" type="submit">Delete Data</button>
+                  
+                </form>
+              </div>
+            </div>
+
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                <p class="mb-1">&copy; La Ode Ridho Fahreza</p>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#">Privacy</a></li>
+                  <li class="list-inline-item"><a href="#">Terms</a></li>
+                  <li class="list-inline-item"><a href="#">Support</a></li>
+                </ul>
+              </footer>
+
+    </div>
+    
+
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        var app = new Vue ({
+            el: '#app',
+            data: {
+                errors: [],
+                message: null,
+                company:[],
+                userIdEdit: null,
+                userIdDelete: null,
+                editMode: false,
+                deleteMode: false,
+                name : '',
+                ket: '',
+                syarat: '',
+                addres: '',
+                description:'',
+            },
+            mounted: function() {
+                this.getUser();
+            },
+            methods: {
+                getUser() {
+                    axios.get('https://62236b7e3af069a0f9a1d1c8.mockapi.io/company')
+                        .then(response => {
+                            this.company = response.data;
+                            console.log(response);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+                createUser: function(){
+                    axios.post('https://62236b7e3af069a0f9a1d1c8.mockapi.io/company', {
+                        name: this.name,
+                        ket: this.ket,
+                        syarat: this.syarat,
+                        gender: this.gender,
+                        addres: this.addres,
+                        description: this.description,
+                    })
+                    .then(response => {
+                            this.getUser();
+                            this.message = "Your data has been submitted";
+                            console.log(response);
+                    })
+                    .catch(error => {
+                            console.log(error);
+                    });
+                },
+                resetForm: function () {
+                    this.message = null;
+                    this.editMode = false;
+                    this.deleteMode = false;
+                    this.userIdEdit = null;
+                    this.name = null;
+                    this.ket = null;
+                    this.syarat = null;
+                    this.addres = null;
+                    this.description =null;
+                },
+                getEdit: function (user) {
+                    this.message = null;
+                    this.editMode = true;
+                    this.deleteMode = false;
+                    this.userIdEdit = user.id;
+                    this.name = user.name;
+                    this.ket = user.ket;
+                    this.syarat = user.syarat;
+                    this.addres = user.addres;
+                    this.description = user.description;
+                },
+                getDelete: function (user) {
+                    this.message = null;
+                    this.deleteMode = true;
+                    this.editMode = false;
+                    this.userIdDelete = user.id;
+                    this.name = user.name;
+                    this.ket = user.ket;
+                    this.syarat = user.syarat;
+                    this.addres = user.addres;
+                    this.description = user.description;
+                },
+                updateUser: function () {
+                    axios.put(`https://62236b7e3af069a0f9a1d1c8.mockapi.io/company/${this.userIdEdit}`, {
+                            name: this.name,
+                            lastName: this.lastName,
+                            ket: this.ket,
+                            syarat: this.syarat,
+                            anddres: this.anddres,
+                            description: this.description,
+                            userName: this.userName,
+                        })
+                        .then(res => {
+                            // handle success
+                            this.message = "Your data has been updated";
+                            this.getUser();
+                        })
+                        .catch(err => {
+                            // handle error
+                            console.log(err);
+                        })
+                },
+                // Delete User
+                deleteUser: function () {
+                    axios.delete(`https://62236b7e3af069a0f9a1d1c8.mockapi.io/company/${this.userIdDelete}`)
+                        .then(res => {
+                            // handle success
+                            this.message = "Your data has been deleted";
+                            this.getUser();
+                        })
+                        .catch(err => {
+                            // handle error
+                            console.log(err);
+                        })
+                }
+            }
+        })
+        
+    </script>
+
+
+</body>
+</html>
