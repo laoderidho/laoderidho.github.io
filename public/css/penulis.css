@@ -1,0 +1,10 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+.jumbotron{
+    padding-top: 2rem;
+    background-color: #e2edff;
+}
+#h1{
+    font-weight: bold;
+}
